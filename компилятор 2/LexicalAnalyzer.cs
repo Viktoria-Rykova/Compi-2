@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -32,15 +32,14 @@ namespace компилятор_2
                 results.Add((2, "Идентификатор (название словаря)", dictName, dictNameStart, dictNameEnd));
             }
 
-
             int assignPos = dictNameEnd + 2;
             results.Add((10, "Оператор присваивания", "=", assignPos, assignPos));
 
-            int openBracePos = assignPos + 2; 
+            int openBracePos = assignPos + 2;
             results.Add((13, "Фигурная скобка открывающая", "{", openBracePos, openBracePos));
 
             string dictContent = dictMatch.Groups[2].Value;
-            int dictContentStart = openBracePos + 2; 
+            int dictContentStart = openBracePos + 2;
 
             string tokenPattern = @"\s+|[{}=:,;]|'[^']*'|""[^""]*""|[A-Za-z_][A-Za-z0-9_]*|\d+|['""]";
             Regex regex = new Regex(tokenPattern);
@@ -89,6 +88,13 @@ namespace компилятор_2
 
             int closeBracePos = dictMatch.Index + dictMatch.Length - 1;
             results.Add((14, "Фигурная скобка закрывающая", "}", closeBracePos, closeBracePos));
+
+            // Проверка на точку с запятой после закрывающей фигурной скобки
+            int semicolonPos = closeBracePos + 1;
+            if (input.Length > semicolonPos && input[semicolonPos] == ';')
+            {
+                results.Add((16, "Конец оператора", ";", semicolonPos + 1, semicolonPos + 1));
+            }
 
             return results;
         }
