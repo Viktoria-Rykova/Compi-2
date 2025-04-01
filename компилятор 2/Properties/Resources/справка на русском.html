@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документ с содержанием</title>
+    <style>
+        body { font-family: 'Times New Roman', serif; }
+        nav { margin-bottom: 20px; }
+        section { margin-bottom: 40px; }
+        button { margin: 5px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Документ с содержанием</h1>
+    <nav>
+        <h2>Содержание</h2>
+        <ul>
+            <li><a href="#section1">Суть приложения</a></li>
+            <li><a href="#section2">Встроенные пункты меню</a>
+                <ul>
+                    <li><a href="#file">Файл</a></li>
+                    <li><a href="#edit">Правка</a></li>
+                    <li><a href="#text">Справка</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
+    <section id="section1">
+        <h2>Суть приложения</h2>
+        <p>Это приложение представляет собой компилятор с основными функциями работы с файлами, редактированием текста.</p>
+    </section>
+    
+    <section id="section2">
+        <h2>Встроенные пункты меню</h2>
+        
+        <section id="file">
+            <h3>Файл</h3>
+            <p>Этот пункт меню отвечает за работу с файлами.</p>
+            <ul>
+                <li><strong>Создать</strong> - создать новый файл.</li>
+                <li><strong>Открыть</strong> - открыть существующий файл.</li>
+                <li><strong>Сохранить</strong> - сохранить текущий файл.</li>
+                <li><strong>Сохранить как</strong> - сохранить файл под другим именем.</li>
+                <li><strong>Выход</strong> - выйти из компилятора.</li>
+
+            </ul>
+        </section>
+        
+        <section id="edit">
+            <h3>Правка</h3>
+            <p>Этот пункт меню содержит инструменты редактирования текста.</p>
+            <ul>
+                <li><strong>Отменить</strong> - отменить последнее действие.</li>
+                <li><strong>Повторить</strong> - повторить отменённое действие.</li>
+                <li><strong>Вырезать</strong> - удалить выделенный текст и сохранить его в буфер обмена.</li>
+                <li><strong>Копировать</strong> - скопировать выделенный текст в буфер обмена.</li>
+                <li><strong>Вставить</strong> - вставить текст из буфера обмена.</li>
+                <li><strong>Удалить</strong> - удалить текстовый фрагмент.</li>
+                <li><strong>Выделить все</strong> - выделить весь текстовый фрагмент.</li>
+            </ul>
+        </section>
+        
+        <section id="text">
+            <h3>Справка</h3>
+            <p>Этот пункт меню позволяет форматировать текст.</p>
+            <ul>
+                <li><strong>Вызов справки</strong> - инструкция по компилятору.</li>
+                <li><strong>О программе</strong> - основная информация о программе и данные для связи.</li>
+            </ul>
+        </section>
+    </section>
+</body>
+</html>
